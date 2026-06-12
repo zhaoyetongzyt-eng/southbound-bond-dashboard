@@ -26,6 +26,20 @@
       "url": "https://www.hkex.com.hk/Products/Securities/Debt-Securities?sc_lang=zh-HK"
     }
   ],
+  "marketMakers": [
+    {"name": "中银香港", "english": "Bank of China (Hong Kong)", "type": "离岸银行"},
+    {"name": "汇丰银行", "english": "HSBC", "type": "国际银行"},
+    {"name": "渣打银行", "english": "Standard Chartered", "type": "国际银行"},
+    {"name": "花旗银行", "english": "Citi", "type": "国际银行"},
+    {"name": "摩根大通", "english": "J.P. Morgan", "type": "国际银行"},
+    {"name": "星展银行", "english": "DBS Bank", "type": "国际银行"},
+    {"name": "工银亚洲", "english": "ICBC (Asia)", "type": "离岸银行"},
+    {"name": "建银亚洲", "english": "CCB (Asia)", "type": "离岸银行"},
+    {"name": "交银香港", "english": "Bank of Communications (HK)", "type": "离岸银行"},
+    {"name": "招商永隆银行", "english": "CMB Wing Lung Bank", "type": "离岸银行"},
+    {"name": "法国巴黎银行", "english": "BNP Paribas", "type": "国际银行"},
+    {"name": "瑞银", "english": "UBS", "type": "国际银行"}
+  ],
   "institutions": [
     {
       "id": "southern-fund",

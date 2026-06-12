@@ -1,11 +1,12 @@
 const DATA_URL = "data/institutions.json";
-const STORAGE_KEY = "southbound-institution-research-v1";
+const STORAGE_KEY = "southbound-institution-research-v2";
 let repoData;
 let data;
 let activeCategory = "全部";
 
 const $ = (s) => document.querySelector(s);
-const categoryLabels = { 银行: "BANK", 资管机构: "ASSET MANAGER", 保险: "INSURER", 理财: "WEALTH MANAGEMENT", 券商: "SECURITIES" };
+const investorCategories = ["资管机构", "券商", "保险", "理财"];
+const categoryLabels = { 资管机构: "基金公司", 保险: "保险", 理财: "理财", 券商: "券商" };
 
 async function init() {
   repoData = await fetch(DATA_URL).then(r => r.json());
@@ -15,53 +16,73 @@ async function init() {
   bind();
 }
 
+function investors() {
+  return data.institutions.filter(x => investorCategories.includes(x.category));
+}
+
 function render() {
   $("#asOf").textContent = data.meta.updated;
   renderStats();
   renderTabs();
   renderCards();
+  renderMarketMakers();
   renderSources();
 }
 
 function renderStats() {
-  const cats = ["银行", "资管机构", "保险", "理财", "券商"];
-  $("#stats").innerHTML = cats.map(cat => `<div class="stat"><strong>${data.institutions.filter(x => x.category === cat).length}</strong><span>${cat}</span></div>`).join("");
+  const rows = investors();
+  const stats = [
+    ["重点投资人", rows.length, "6基金 + 5券商 + 6保险 + 3理财"],
+    ["基金公司", rows.filter(x => x.category === "资管机构").length, "主动及指数化固收"],
+    ["券商", rows.filter(x => x.category === "券商").length, "交易及相对价值"],
+    ["保险与理财", rows.filter(x => ["保险", "理财"].includes(x.category)).length, "长期配置与稳健票息"],
+    ["做市商观察池", (data.marketMakers || []).length, "离岸做市及报价机构"]
+  ];
+  $("#stats").innerHTML = stats.map(x => `<div class="stat"><span>${x[0]}</span><strong>${x[1]}</strong><small>${x[2]}</small></div>`).join("");
 }
 
 function renderTabs() {
-  const cats = ["全部", "银行", "资管机构", "保险", "理财", "券商"];
-  $("#tabs").innerHTML = cats.map(cat => `<button class="tab ${activeCategory === cat ? "active" : ""}" data-category="${cat}">${cat}</button>`).join("");
+  const cats = ["全部", ...investorCategories];
+  $("#tabs").innerHTML = cats.map(cat => `<button class="tab ${activeCategory === cat ? "active" : ""}" data-category="${cat}">${cat === "资管机构" ? "基金公司" : cat}</button>`).join("");
 }
 
 function renderCards() {
   const q = $("#searchInput").value.trim().toLowerCase();
-  const rows = data.institutions.filter(x => {
+  const rows = investors().filter(x => {
     const categoryMatch = activeCategory === "全部" || x.category === activeCategory;
     const text = [x.name, x.legalName, x.preference, ...(x.tags || [])].join(" ").toLowerCase();
     return categoryMatch && (!q || text.includes(q));
   });
+  $("#investorCount").textContent = `当前显示 ${rows.length} / ${investors().length} 家重点机构`;
   $("#emptyState").classList.toggle("hidden", rows.length > 0);
   $("#institutionGrid").innerHTML = rows.map(x => `
     <article class="institution">
-      <div class="card-top"><span class="category">${categoryLabels[x.category]}</span><span class="evidence">${x.evidence}级证据</span></div>
-      <h3>${x.name}</h3><p class="legal-name">${x.legalName}</p>
-      <div class="tags">${x.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
-      <div class="metrics">
-        <div class="metric"><span>关注期限</span><strong>${x.tenor}</strong></div>
-        <div class="metric"><span>研究收益率区间</span><strong>${x.yield}</strong></div>
-      </div>
-      <button class="card-action" data-id="${x.id}">查看研究摘要 →</button>
+      <div class="institution-name"><h3>${x.name}</h3><p>${x.legalName}</p></div>
+      <span class="badge category">${categoryLabels[x.category]}</span>
+      <div class="preference">${x.preference}</div>
+      <div class="mini-metric"><span>关注期限</span><strong>${x.tenor}</strong></div>
+      <div class="mini-metric"><span>研究收益率</span><strong>${x.yield}</strong></div>
+      <button class="card-action" data-id="${x.id}">详情</button>
+    </article>`).join("");
+}
+
+function renderMarketMakers() {
+  $("#marketMakerList").innerHTML = (data.marketMakers || []).map((x, i) => `
+    <article class="market-maker">
+      <span class="market-index">${String(i + 1).padStart(2, "0")}</span>
+      <div><h3>${x.name}</h3><p>${x.english}</p></div>
+      <span class="badge market-type">${x.type}</span>
     </article>`).join("");
 }
 
 function renderSources() {
-  $("#sourceList").innerHTML = data.sources.map((s, i) => `<a class="source-link" href="${s.url}" target="_blank" rel="noreferrer"><span>0${i + 1}</span><div>${s.title}<br><small>${s.note}</small></div><b>↗</b></a>`).join("");
+  $("#sourceList").innerHTML = data.sources.map(s => `<a class="source-link" href="${s.url}" target="_blank" rel="noreferrer"><b>${s.title} ↗</b><small>${s.note}</small></a>`).join("");
 }
 
 function showDetail(id) {
   const x = data.institutions.find(i => i.id === id);
   $("#detailContent").innerHTML = `
-    <div class="detail-head"><span class="category">${categoryLabels[x.category]} · ${x.evidence}级证据</span><h2>${x.name}</h2><p>${x.legalName}</p></div>
+    <div class="detail-head"><span class="badge category">${categoryLabels[x.category]} · ${x.evidence}级证据</span><h2>${x.name}</h2><p>${x.legalName}</p></div>
     <div class="detail-grid">
       <div class="detail-section"><h4>投资偏好</h4><p>${x.preference}</p></div>
       <div class="detail-section"><h4>期限与收益率</h4><p>主要关注 ${x.tenor}；研究收益率区间 ${x.yield}。</p></div>
