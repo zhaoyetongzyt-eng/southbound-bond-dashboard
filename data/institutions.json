@@ -32,36 +32,803 @@
     }
   ],
   "marketMakers": [
-    {"name": "中国农业银行股份有限公司香港分行", "english": "Agricultural Bank of China Limited, Hong Kong Branch"},
-    {"name": "中国银行（香港）有限公司", "english": "Bank of China (Hong Kong) Limited"},
-    {"name": "交通银行股份有限公司香港分行", "english": "Bank of Communications Co., Ltd., Hong Kong Branch"},
-    {"name": "法国巴黎银行香港分行", "english": "BNP Paribas, Hong Kong Branch"},
-    {"name": "中信银行（国际）有限公司", "english": "China CITIC Bank International Limited"},
-    {"name": "中国建设银行（亚洲）股份有限公司", "english": "China Construction Bank (Asia) Corporation Limited"},
-    {"name": "中国国际金融香港证券有限公司", "english": "China International Capital Corporation Hong Kong Securities Limited"},
-    {"name": "花旗环球金融亚洲有限公司", "english": "Citigroup Global Markets Asia Limited"},
-    {"name": "招商永隆银行有限公司", "english": "CMB Wing Lung Bank Limited"},
-    {"name": "Credit Agricole Corporate and Investment Bank", "english": "Credit Agricole Corporate and Investment Bank"},
-    {"name": "CSI Global Markets Limited", "english": "CSI Global Markets Limited"},
-    {"name": "星展银行", "english": "DBS Bank Limited"},
-    {"name": "德意志银行（香港分行）", "english": "Deutsche Bank AG, Hong Kong Branch"},
-    {"name": "国泰君安证券（香港）有限公司", "english": "Guotai Junan Securities (Hong Kong) Limited"},
-    {"name": "香港上海汇丰银行有限公司", "english": "Hongkong and Shanghai Banking Corporation Limited, The"},
-    {"name": "华泰金融控股（香港）有限公司", "english": "Huatai Financial Holdings (Hong Kong) Limited"},
-    {"name": "中国工商银行（亚洲）有限公司", "english": "Industrial and Commercial Bank of China (Asia) Limited"},
-    {"name": "兴业银行股份有限公司", "english": "Industrial Bank Co., Ltd."},
-    {"name": "J.P. Morgan Securities （Asia Pacific） Limited", "english": "J.P. Morgan Securities (Asia Pacific) Limited"},
-    {"name": "瑞穗证券亚洲有限公司", "english": "Mizuho Securities Asia Limited"},
-    {"name": "渣打银行（香港）有限公司", "english": "Standard Chartered Bank (Hong Kong) Limited"},
-    {"name": "UBS AG", "english": "UBS AG"}
+    {
+      "name": "中国农业银行股份有限公司香港分行",
+      "english": "Agricultural Bank of China Limited, Hong Kong Branch"
+    },
+    {
+      "name": "中国银行（香港）有限公司",
+      "english": "Bank of China (Hong Kong) Limited"
+    },
+    {
+      "name": "交通银行股份有限公司香港分行",
+      "english": "Bank of Communications Co., Ltd., Hong Kong Branch"
+    },
+    {
+      "name": "法国巴黎银行香港分行",
+      "english": "BNP Paribas, Hong Kong Branch"
+    },
+    {
+      "name": "中信银行（国际）有限公司",
+      "english": "China CITIC Bank International Limited"
+    },
+    {
+      "name": "中国建设银行（亚洲）股份有限公司",
+      "english": "China Construction Bank (Asia) Corporation Limited"
+    },
+    {
+      "name": "中国国际金融香港证券有限公司",
+      "english": "China International Capital Corporation Hong Kong Securities Limited"
+    },
+    {
+      "name": "花旗环球金融亚洲有限公司",
+      "english": "Citigroup Global Markets Asia Limited"
+    },
+    {
+      "name": "招商永隆银行有限公司",
+      "english": "CMB Wing Lung Bank Limited"
+    },
+    {
+      "name": "Credit Agricole Corporate and Investment Bank",
+      "english": "Credit Agricole Corporate and Investment Bank"
+    },
+    {
+      "name": "CSI Global Markets Limited",
+      "english": "CSI Global Markets Limited"
+    },
+    {
+      "name": "星展银行",
+      "english": "DBS Bank Limited"
+    },
+    {
+      "name": "德意志银行（香港分行）",
+      "english": "Deutsche Bank AG, Hong Kong Branch"
+    },
+    {
+      "name": "国泰君安证券（香港）有限公司",
+      "english": "Guotai Junan Securities (Hong Kong) Limited"
+    },
+    {
+      "name": "香港上海汇丰银行有限公司",
+      "english": "Hongkong and Shanghai Banking Corporation Limited, The"
+    },
+    {
+      "name": "华泰金融控股（香港）有限公司",
+      "english": "Huatai Financial Holdings (Hong Kong) Limited"
+    },
+    {
+      "name": "中国工商银行（亚洲）有限公司",
+      "english": "Industrial and Commercial Bank of China (Asia) Limited"
+    },
+    {
+      "name": "兴业银行股份有限公司",
+      "english": "Industrial Bank Co., Ltd."
+    },
+    {
+      "name": "J.P. Morgan Securities （Asia Pacific） Limited",
+      "english": "J.P. Morgan Securities (Asia Pacific) Limited"
+    },
+    {
+      "name": "瑞穗证券亚洲有限公司",
+      "english": "Mizuho Securities Asia Limited"
+    },
+    {
+      "name": "渣打银行（香港）有限公司",
+      "english": "Standard Chartered Bank (Hong Kong) Limited"
+    },
+    {
+      "name": "UBS AG",
+      "english": "UBS AG"
+    }
   ],
   "institutions": [
+    {
+      "id": "icbc",
+      "name": "工商银行",
+      "legalName": "中国工商银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "abc",
+      "name": "农业银行",
+      "legalName": "中国农业银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "boc",
+      "name": "中国银行",
+      "legalName": "中国银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "ccb",
+      "name": "建设银行",
+      "legalName": "中国建设银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bocom",
+      "name": "交通银行",
+      "legalName": "交通银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "psbc",
+      "name": "邮储银行",
+      "legalName": "中国邮政储蓄银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "cdb",
+      "name": "国家开发银行",
+      "legalName": "国家开发银行",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "exim-bank",
+      "name": "中国进出口银行",
+      "legalName": "中国进出口银行",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "cmb",
+      "name": "招商银行",
+      "legalName": "招商银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "cib",
+      "name": "兴业银行",
+      "legalName": "兴业银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "spdb",
+      "name": "浦发银行",
+      "legalName": "上海浦东发展银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "czbank",
+      "name": "浙商银行",
+      "legalName": "浙商银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "ceb",
+      "name": "光大银行",
+      "legalName": "中国光大银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "hxb",
+      "name": "华夏银行",
+      "legalName": "华夏银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "citic-bank",
+      "name": "中信银行",
+      "legalName": "中信银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "cmmb",
+      "name": "民生银行",
+      "legalName": "中国民生银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "pingan-bank",
+      "name": "平安银行",
+      "legalName": "平安银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "hengfeng-bank",
+      "name": "恒丰银行",
+      "legalName": "恒丰银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "cgb",
+      "name": "广发银行",
+      "legalName": "广发银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "cbhb",
+      "name": "渤海银行",
+      "legalName": "渤海银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-beijing",
+      "name": "北京银行",
+      "legalName": "北京银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-ningbo",
+      "name": "宁波银行",
+      "legalName": "宁波银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-hangzhou",
+      "name": "杭州银行",
+      "legalName": "杭州银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-jiangsu",
+      "name": "江苏银行",
+      "legalName": "江苏银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-shanghai",
+      "name": "上海银行",
+      "legalName": "上海银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "huishang-bank",
+      "name": "徽商银行",
+      "legalName": "徽商银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-nanjing",
+      "name": "南京银行",
+      "legalName": "南京银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-guangzhou",
+      "name": "广州银行",
+      "legalName": "广州银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-luoyang",
+      "name": "洛阳银行",
+      "legalName": "洛阳银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-zhengzhou",
+      "name": "郑州银行",
+      "legalName": "郑州银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-changsha",
+      "name": "长沙银行",
+      "legalName": "长沙银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "zhongyuan-bank",
+      "name": "中原银行",
+      "legalName": "中原银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-qingdao",
+      "name": "青岛银行",
+      "legalName": "青岛银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "xiamen-bank",
+      "name": "厦门银行",
+      "legalName": "厦门银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-guiyang",
+      "name": "贵阳银行",
+      "legalName": "贵阳银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "bank-of-xian",
+      "name": "西安银行",
+      "legalName": "西安银行股份有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "hsbc-china",
+      "name": "汇丰中国",
+      "legalName": "汇丰银行（中国）有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "citi-china",
+      "name": "花旗中国",
+      "legalName": "花旗银行（中国）有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "standard-chartered-china",
+      "name": "渣打中国",
+      "legalName": "渣打银行（中国）有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "mufg-china",
+      "name": "三菱日联中国",
+      "legalName": "三菱日联银行（中国）有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
+    {
+      "id": "smbc-china",
+      "name": "三井住友中国",
+      "legalName": "三井住友银行（中国）有限公司",
+      "category": "银行",
+      "tags": [
+        "南向通银行投资人"
+      ],
+      "tenor": "待调研",
+      "currency": "多币种（待核验）",
+      "yield": "待调研",
+      "preference": "南向通银行投资人，具体投资偏好待调研。",
+      "rationale": "列入南向通银行投资人名单，具体账户策略需逐家核验。",
+      "evidence": "A",
+      "disclaimer": "投资偏好、关注期限、币种和收益率要求待调研。",
+      "source": "https://www.chinabondconnect.com/sc/Southbound/"
+    },
     {
       "id": "southern-fund",
       "name": "南方基金",
       "legalName": "南方基金管理股份有限公司",
       "category": "资管机构",
-      "tags": ["投资级", "中资美元债", "信用精选"],
+      "tags": [
+        "投资级",
+        "中资美元债",
+        "信用精选"
+      ],
       "tenor": "1–5年",
       "yield": "4.5%–7.0%",
       "preference": "偏好流动性较好的投资级中资美元债、金融与央国企信用，兼顾票息与交易机会。",
@@ -75,7 +842,11 @@
       "name": "博时基金",
       "legalName": "博时基金管理有限公司",
       "category": "资管机构",
-      "tags": ["全球债券", "投资级", "久期管理"],
+      "tags": [
+        "全球债券",
+        "投资级",
+        "久期管理"
+      ],
       "tenor": "2–7年",
       "yield": "4.5%–7.0%",
       "preference": "关注全球利率周期、投资级信用和中资离岸债，策略上可主动调整久期。",
@@ -89,7 +860,11 @@
       "name": "鹏华基金",
       "legalName": "鹏华基金管理有限公司",
       "category": "资管机构",
-      "tags": ["信用研究", "票息策略", "金融债"],
+      "tags": [
+        "信用研究",
+        "票息策略",
+        "金融债"
+      ],
       "tenor": "1–5年",
       "yield": "5.0%–7.5%",
       "preference": "重视信用研究与票息，偏好金融、央国企及有基本面支撑的信用债。",
@@ -103,7 +878,11 @@
       "name": "华夏基金",
       "legalName": "华夏基金管理有限公司",
       "category": "资管机构",
-      "tags": ["指数配置", "投资级", "高流动性"],
+      "tags": [
+        "指数配置",
+        "投资级",
+        "高流动性"
+      ],
       "tenor": "1–5年",
       "yield": "4.5%–6.5%",
       "preference": "兼顾指数化配置与主动信用研究，偏好规模大、流动性强的投资级债券。",
@@ -117,7 +896,11 @@
       "name": "富国基金",
       "legalName": "富国基金管理有限公司",
       "category": "资管机构",
-      "tags": ["主动信用", "票息", "信用利差"],
+      "tags": [
+        "主动信用",
+        "票息",
+        "信用利差"
+      ],
       "tenor": "2–5年",
       "yield": "5.0%–7.5%",
       "preference": "主动挖掘信用利差，偏好票息有吸引力且基本面可跟踪的信用债。",
@@ -131,7 +914,11 @@
       "name": "广发基金",
       "legalName": "广发基金管理有限公司",
       "category": "资管机构",
-      "tags": ["全球配置", "中资美元债", "收益增强"],
+      "tags": [
+        "全球配置",
+        "中资美元债",
+        "收益增强"
+      ],
       "tenor": "1–5年",
       "yield": "5.0%–8.0%",
       "preference": "关注全球配置与中资美元债收益增强机会，可能在投资级基础上适度下沉信用。",
@@ -145,7 +932,11 @@
       "name": "招商证券",
       "legalName": "招商证券股份有限公司",
       "category": "券商",
-      "tags": ["交易型", "金融债", "相对价值"],
+      "tags": [
+        "交易型",
+        "金融债",
+        "相对价值"
+      ],
       "tenor": "1–5年",
       "yield": "5.0%–8.0%",
       "preference": "偏交易型和相对价值机会，关注流动性较好的金融债、央国企债及一二级价差。",
@@ -159,7 +950,11 @@
       "name": "广发证券",
       "legalName": "广发证券股份有限公司",
       "category": "券商",
-      "tags": ["信用精选", "交易型", "收益增强"],
+      "tags": [
+        "信用精选",
+        "交易型",
+        "收益增强"
+      ],
       "tenor": "1–5年",
       "yield": "5.5%–8.5%",
       "preference": "重视信用研究和收益增强，关注有利差空间的金融、城投替代及产业主体离岸债。",
@@ -173,7 +968,11 @@
       "name": "东方证券",
       "legalName": "东方证券股份有限公司",
       "category": "券商",
-      "tags": ["主动管理", "信用利差", "交易型"],
+      "tags": [
+        "主动管理",
+        "信用利差",
+        "交易型"
+      ],
       "tenor": "1–5年",
       "yield": "5.5%–8.5%",
       "preference": "关注信用利差与交易机会，对中等久期、基本面改善型主体的接受度相对更高。",
@@ -187,7 +986,11 @@
       "name": "中信建投",
       "legalName": "中信建投证券股份有限公司",
       "category": "券商",
-      "tags": ["一级市场", "央国企", "相对价值"],
+      "tags": [
+        "一级市场",
+        "央国企",
+        "相对价值"
+      ],
       "tenor": "1–5年",
       "yield": "5.0%–8.0%",
       "preference": "关注一级发行、央国企及金融债的相对价值，也可能参与高流动性二级交易。",
@@ -201,7 +1004,11 @@
       "name": "中国银河证券",
       "legalName": "中国银河证券股份有限公司",
       "category": "券商",
-      "tags": ["高流动性", "金融债", "交易型"],
+      "tags": [
+        "高流动性",
+        "金融债",
+        "交易型"
+      ],
       "tenor": "1–3年",
       "yield": "5.0%–7.5%",
       "preference": "偏好高流动性、短中久期品种，关注金融与高等级央国企信用。",
@@ -215,7 +1022,11 @@
       "name": "平安保险",
       "legalName": "中国平安保险（集团）股份有限公司",
       "category": "保险",
-      "tags": ["长期配置", "投资级", "资产负债匹配"],
+      "tags": [
+        "长期配置",
+        "投资级",
+        "资产负债匹配"
+      ],
       "tenor": "5–10年",
       "yield": "4.5%–6.0%",
       "preference": "以资产负债匹配和长期配置为主，偏好投资级、现金流稳定的金融与央国企债。",
@@ -229,7 +1040,11 @@
       "name": "中国人保",
       "legalName": "中国人民保险集团股份有限公司",
       "category": "保险",
-      "tags": ["高等级", "稳健票息", "长期配置"],
+      "tags": [
+        "高等级",
+        "稳健票息",
+        "长期配置"
+      ],
       "tenor": "3–10年",
       "yield": "4.5%–6.0%",
       "preference": "稳健配置为主，关注高等级金融、央国企及现金流可预测的信用债。",
@@ -243,7 +1058,11 @@
       "name": "中国人寿",
       "legalName": "中国人寿保险（集团）公司",
       "category": "保险",
-      "tags": ["超长期", "高等级", "资产负债匹配"],
+      "tags": [
+        "超长期",
+        "高等级",
+        "资产负债匹配"
+      ],
       "tenor": "5–15年",
       "yield": "4.5%–6.0%",
       "preference": "长久期配置需求突出，偏好高等级、规模大且票息稳定的金融和央国企债。",
@@ -257,7 +1076,11 @@
       "name": "中国太平",
       "legalName": "中国太平保险集团有限责任公司",
       "category": "保险",
-      "tags": ["跨境配置", "投资级", "长期票息"],
+      "tags": [
+        "跨境配置",
+        "投资级",
+        "长期票息"
+      ],
       "tenor": "3–10年",
       "yield": "4.5%–6.5%",
       "preference": "具有跨境配置场景，偏好投资级中资离岸债、金融债与长期票息资产。",
@@ -271,7 +1094,11 @@
       "name": "中国太保",
       "legalName": "中国太平洋保险（集团）股份有限公司",
       "category": "保险",
-      "tags": ["长期配置", "高等级", "稳健收益"],
+      "tags": [
+        "长期配置",
+        "高等级",
+        "稳健收益"
+      ],
       "tenor": "5–10年",
       "yield": "4.5%–6.0%",
       "preference": "强调长期稳健收益和资产负债匹配，偏好高等级信用及金融债。",
@@ -285,7 +1112,11 @@
       "name": "泰康保险",
       "legalName": "泰康保险集团股份有限公司",
       "category": "保险",
-      "tags": ["长期配置", "信用精选", "收益增强"],
+      "tags": [
+        "长期配置",
+        "信用精选",
+        "收益增强"
+      ],
       "tenor": "5–10年",
       "yield": "5.0%–6.5%",
       "preference": "长期配置基础上重视主动管理与信用精选，可能关注有适度利差的优质产业债。",
@@ -299,7 +1130,11 @@
       "name": "招银理财",
       "legalName": "招银理财有限责任公司",
       "category": "理财",
-      "tags": ["票息策略", "高流动性", "金融债"],
+      "tags": [
+        "票息策略",
+        "高流动性",
+        "金融债"
+      ],
       "tenor": "1–3年",
       "yield": "4.5%–6.5%",
       "preference": "偏好短中久期、流动性较好且票息有吸引力的金融债与高等级信用债。",
@@ -313,7 +1148,11 @@
       "name": "中银理财",
       "legalName": "中银理财有限责任公司",
       "category": "理财",
-      "tags": ["跨境配置", "投资级", "金融债"],
+      "tags": [
+        "跨境配置",
+        "投资级",
+        "金融债"
+      ],
       "tenor": "1–5年",
       "yield": "4.5%–6.5%",
       "preference": "依托集团跨境能力，关注投资级中资离岸债、金融债及高流动性配置机会。",
@@ -327,7 +1166,11 @@
       "name": "工银理财",
       "legalName": "工银理财有限责任公司",
       "category": "理财",
-      "tags": ["高等级", "稳健票息", "流动性管理"],
+      "tags": [
+        "高等级",
+        "稳健票息",
+        "流动性管理"
+      ],
       "tenor": "1–5年",
       "yield": "4.5%–6.0%",
       "preference": "以高等级、稳健票息和流动性管理为主，关注大型金融与央国企发行人。",
@@ -335,202 +1178,6 @@
       "evidence": "B",
       "disclaimer": "收益区间会随产品期限和净值波动目标变化。",
       "source": "https://www.icbc.com.cn/"
-    },
-    {
-      "id": "icbc",
-      "name": "工商银行",
-      "legalName": "中国工商银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "高等级"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "大型银行具备跨境债券投资与交易基础，实际参与状态需逐家核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.icbc.com.cn/"
-    },
-    {
-      "id": "ccb",
-      "name": "建设银行",
-      "legalName": "中国建设银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "高等级"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "大型银行具备跨境债券投资与交易基础，实际参与状态需逐家核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.ccb.com/"
-    },
-    {
-      "id": "abc",
-      "name": "农业银行",
-      "legalName": "中国农业银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "高等级"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "大型银行具备跨境债券投资与交易基础，实际参与状态需逐家核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.abchina.com/"
-    },
-    {
-      "id": "boc",
-      "name": "中国银行",
-      "legalName": "中国银行股份有限公司",
-      "category": "银行",
-      "tags": ["跨境配置", "交易能力"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池，具备较强跨境市场基础。",
-      "rationale": "大型银行具备跨境债券投资与交易基础，实际账户偏好需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.boc.cn/"
-    },
-    {
-      "id": "bocom",
-      "name": "交通银行",
-      "legalName": "交通银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "金融债"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "大型银行具备跨境债券投资与交易基础，实际参与状态需逐家核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.bankcomm.com/"
-    },
-    {
-      "id": "cmb",
-      "name": "招商银行",
-      "legalName": "招商银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "交易能力"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "股份制银行具备跨境债券投资与交易基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.cmbchina.com/"
-    },
-    {
-      "id": "citic-bank",
-      "name": "中信银行",
-      "legalName": "中信银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "金融债"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "股份制银行具备跨境债券投资与交易基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.citicbank.com/"
-    },
-    {
-      "id": "cib",
-      "name": "兴业银行",
-      "legalName": "兴业银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "债券交易"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "股份制银行具备债券交易与跨境配置基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.cib.com.cn/"
-    },
-    {
-      "id": "spdb",
-      "name": "浦发银行",
-      "legalName": "上海浦东发展银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "金融债"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "股份制银行具备跨境债券投资与交易基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.spdb.com.cn/"
-    },
-    {
-      "id": "cmmb",
-      "name": "民生银行",
-      "legalName": "中国民生银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "信用债"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "股份制银行具备跨境债券投资与交易基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.cmbc.com.cn/"
-    },
-    {
-      "id": "ceb",
-      "name": "光大银行",
-      "legalName": "中国光大银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "金融债"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "股份制银行具备跨境债券投资与交易基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.cebbank.com/"
-    },
-    {
-      "id": "pingan-bank",
-      "name": "平安银行",
-      "legalName": "平安银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "交易能力"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "股份制银行具备跨境债券投资与交易基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://bank.pingan.com/"
-    },
-    {
-      "id": "hxb",
-      "name": "华夏银行",
-      "legalName": "华夏银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "股份制银行具备债券投资基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.hxb.com.cn/"
-    },
-    {
-      "id": "psbc",
-      "name": "邮储银行",
-      "legalName": "中国邮政储蓄银行股份有限公司",
-      "category": "银行",
-      "tags": ["合资格机构观察池", "高等级"],
-      "tenor": "待调研",
-      "yield": "待调研",
-      "preference": "纳入银行类南向通研究观察池。",
-      "rationale": "大型银行具备债券配置基础，实际参与状态需核验。",
-      "evidence": "C",
-      "disclaimer": "不代表已核实为当前活跃南向通投资人。",
-      "source": "https://www.psbc.com/"
     }
   ]
 }

@@ -15,9 +15,21 @@ async function init() {
   data.marketMakers = structuredClone(repoData.marketMakers);
   data.sources = structuredClone(repoData.sources);
   data.meta = structuredClone(repoData.meta);
+  syncBankInvestors();
   normalizeData(data);
   render();
   bind();
+}
+
+function syncBankInvestors() {
+  const savedBanks = new Map(data.institutions.filter(x => x.category === "银行").map(x => [x.legalName, x]));
+  const repoBanks = repoData.institutions.filter(x => x.category === "银行").map(bank => {
+    const saved = savedBanks.get(bank.legalName);
+    if (!saved) return structuredClone(bank);
+    return { ...structuredClone(bank), preference: saved.preference, tenor: saved.tenor, currency: saved.currency, yield: saved.yield };
+  });
+  const nonBanks = data.institutions.filter(x => x.category !== "银行");
+  data.institutions = [...repoBanks, ...nonBanks];
 }
 
 function normalizeData(value) {
@@ -61,7 +73,7 @@ function showView(name) {
 function renderStats() {
   const rows = investors();
   const cats = ["银行", "资管机构", "券商", "保险", "理财"];
-  $("#stats").innerHTML = cats.map(cat => `<div class="stat"><span>${categoryLabels[cat]}</span><strong>${rows.filter(x => x.category === cat).length}</strong><small>${cat === "银行" ? "合资格银行观察池" : "重点机构研究池"}</small></div>`).join("");
+  $("#stats").innerHTML = cats.map(cat => `<div class="stat"><span>${categoryLabels[cat]}</span><strong>${rows.filter(x => x.category === cat).length}</strong><small>${cat === "银行" ? "南向通银行投资人" : "重点机构研究池"}</small></div>`).join("");
 }
 
 function renderTabs() {
