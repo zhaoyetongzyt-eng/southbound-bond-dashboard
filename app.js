@@ -12,6 +12,9 @@ async function init() {
   repoData = await fetch(DATA_URL).then(r => r.json());
   const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem("southbound-institution-research-v2");
   data = saved ? JSON.parse(saved) : structuredClone(repoData);
+  data.marketMakers = structuredClone(repoData.marketMakers);
+  data.sources = structuredClone(repoData.sources);
+  data.meta = structuredClone(repoData.meta);
   normalizeData(data);
   render();
   bind();
@@ -104,7 +107,6 @@ function renderMarketMakers() {
     <article class="market-maker">
       <span class="market-index">${String(i + 1).padStart(2, "0")}</span>
       <div><h3>${x.name}</h3><p>${x.english}</p></div>
-      <span class="badge market-type">${x.type}</span>
     </article>`).join("");
 }
 

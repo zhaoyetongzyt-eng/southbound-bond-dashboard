@@ -62,15 +62,16 @@ main { width: min(1480px, 94vw); margin: 22px auto 50px; }
 .evidence { color: var(--green); background: #e7f7f1; padding: 5px 7px; }
 .card-action { padding: 7px 8px; color: var(--blue); background: #edf3ff; font-size: 10px; }
 .market-note { margin: 14px; padding: 12px; color: #6d522d; background: #fff8e8; border: 1px solid #f4e2b9; border-radius: 10px; font-size: 10px; line-height: 1.55; }
+.market-source { margin: 14px; padding: 14px; display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #36547d; background: #f0f5ff; border: 1px solid #dbe7ff; border-radius: 10px; }.market-source strong, .market-source span { display: block; }.market-source strong { font-size: 11px; }.market-source span { margin-top: 4px; color: var(--muted); font-size: 9px; }.market-source a { color: var(--blue); font-size: 10px; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .market-list { padding: 0 14px 14px; }
 .market-page-list { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 25px; }
-.market-maker { display: grid; grid-template-columns: 36px 1fr auto; gap: 10px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.market-maker { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .market-maker:last-child { border-bottom: 0; }
 .market-index { width: 30px; height: 30px; display: grid; place-items: center; color: var(--blue); background: var(--blue-light); border-radius: 8px; font-size: 10px; font-weight: 700; }
 .market-maker h3 { margin: 0 0 3px; font-size: 12px; }.market-maker p { margin: 0; color: var(--muted); font-size: 9px; }
 .market-type { color: #4d596e; background: #f2f4f7; padding: 5px 7px; }
 .source-panel { margin-top: 16px; }
-.source-list { display: grid; grid-template-columns: repeat(4, 1fr); }
+.source-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
 .source-link { min-height: 82px; padding: 15px 18px; display: block; color: var(--text); text-decoration: none; border-right: 1px solid var(--line); }
 .source-link:last-child { border-right: 0; }.source-link b { display: block; margin-bottom: 7px; font-size: 11px; }.source-link small { color: var(--muted); font-size: 9px; line-height: 1.5; }
 footer { padding: 20px 3vw; display: flex; justify-content: space-between; color: #9da9bd; background: var(--navy); font-size: 10px; }
@@ -97,6 +98,6 @@ dialog::backdrop { background: rgba(17,24,39,.62); backdrop-filter: blur(4px); }
 }
 @media (max-width: 520px) {
   .search-actions { grid-template-columns: 1fr; }
-  .market-page-list, .source-list { grid-template-columns: 1fr; }.source-link { border-right: 0; border-bottom: 1px solid var(--line); }.hero-actions { width: 100%; }.hero-actions button { flex: 1; }
+  .market-page-list, .source-list { grid-template-columns: 1fr; }.market-source { align-items: flex-start; flex-direction: column; }.source-link { border-right: 0; border-bottom: 1px solid var(--line); }.hero-actions { width: 100%; }.hero-actions button { flex: 1; }
   footer { gap: 12px; flex-direction: column; }.detail-grid { grid-template-columns: 1fr; padding: 28px; }.detail-section.full { grid-column: auto; }.dialog-body, .detail-head { padding: 32px 24px; }
 }

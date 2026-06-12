@@ -16,6 +16,11 @@
       "url": "https://www.bondconnect.com/en/Southbound/"
     },
     {
+      "title": "债券通：南向通做市商名单",
+      "note": "官方公布的南向通做市商名单，按机构英文名称排序",
+      "url": "https://www.chinabondconnect.com/sc/Southbound/Market-Makers.html"
+    },
+    {
       "title": "中国货币网：债券通",
       "note": "境内债券市场与债券通公开信息",
       "url": "https://www.chinamoney.com.cn/"
@@ -27,18 +32,28 @@
     }
   ],
   "marketMakers": [
-    {"name": "中银香港", "english": "Bank of China (Hong Kong)", "type": "离岸银行"},
-    {"name": "汇丰银行", "english": "HSBC", "type": "国际银行"},
-    {"name": "渣打银行", "english": "Standard Chartered", "type": "国际银行"},
-    {"name": "花旗银行", "english": "Citi", "type": "国际银行"},
-    {"name": "摩根大通", "english": "J.P. Morgan", "type": "国际银行"},
-    {"name": "星展银行", "english": "DBS Bank", "type": "国际银行"},
-    {"name": "工银亚洲", "english": "ICBC (Asia)", "type": "离岸银行"},
-    {"name": "建银亚洲", "english": "CCB (Asia)", "type": "离岸银行"},
-    {"name": "交银香港", "english": "Bank of Communications (HK)", "type": "离岸银行"},
-    {"name": "招商永隆银行", "english": "CMB Wing Lung Bank", "type": "离岸银行"},
-    {"name": "法国巴黎银行", "english": "BNP Paribas", "type": "国际银行"},
-    {"name": "瑞银", "english": "UBS", "type": "国际银行"}
+    {"name": "中国农业银行股份有限公司香港分行", "english": "Agricultural Bank of China Limited, Hong Kong Branch"},
+    {"name": "中国银行（香港）有限公司", "english": "Bank of China (Hong Kong) Limited"},
+    {"name": "交通银行股份有限公司香港分行", "english": "Bank of Communications Co., Ltd., Hong Kong Branch"},
+    {"name": "法国巴黎银行香港分行", "english": "BNP Paribas, Hong Kong Branch"},
+    {"name": "中信银行（国际）有限公司", "english": "China CITIC Bank International Limited"},
+    {"name": "中国建设银行（亚洲）股份有限公司", "english": "China Construction Bank (Asia) Corporation Limited"},
+    {"name": "中国国际金融香港证券有限公司", "english": "China International Capital Corporation Hong Kong Securities Limited"},
+    {"name": "花旗环球金融亚洲有限公司", "english": "Citigroup Global Markets Asia Limited"},
+    {"name": "招商永隆银行有限公司", "english": "CMB Wing Lung Bank Limited"},
+    {"name": "Credit Agricole Corporate and Investment Bank", "english": "Credit Agricole Corporate and Investment Bank"},
+    {"name": "CSI Global Markets Limited", "english": "CSI Global Markets Limited"},
+    {"name": "星展银行", "english": "DBS Bank Limited"},
+    {"name": "德意志银行（香港分行）", "english": "Deutsche Bank AG, Hong Kong Branch"},
+    {"name": "国泰君安证券（香港）有限公司", "english": "Guotai Junan Securities (Hong Kong) Limited"},
+    {"name": "香港上海汇丰银行有限公司", "english": "Hongkong and Shanghai Banking Corporation Limited, The"},
+    {"name": "华泰金融控股（香港）有限公司", "english": "Huatai Financial Holdings (Hong Kong) Limited"},
+    {"name": "中国工商银行（亚洲）有限公司", "english": "Industrial and Commercial Bank of China (Asia) Limited"},
+    {"name": "兴业银行股份有限公司", "english": "Industrial Bank Co., Ltd."},
+    {"name": "J.P. Morgan Securities （Asia Pacific） Limited", "english": "J.P. Morgan Securities (Asia Pacific) Limited"},
+    {"name": "瑞穗证券亚洲有限公司", "english": "Mizuho Securities Asia Limited"},
+    {"name": "渣打银行（香港）有限公司", "english": "Standard Chartered Bank (Hong Kong) Limited"},
+    {"name": "UBS AG", "english": "UBS AG"}
   ],
   "institutions": [
     {
