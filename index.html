@@ -23,45 +23,64 @@
   </header>
 
   <main>
-    <section class="stats" id="stats"></section>
-
-    <section class="control-panel">
-      <div class="tabs" id="tabs"></div>
-      <div class="search-actions">
-        <label class="search">
-          <span>⌕</span>
-          <input id="searchInput" type="search" placeholder="搜索投资人、偏好或券种">
-        </label>
-        <button class="primary csv-button" id="csvBtn">导出 CSV</button>
+    <section id="guideView">
+      <div class="guide-head">
+        <p class="eyebrow blue-text">START GUIDE</p>
+        <h2>选择研究模块</h2>
+        <p>南向通入市机构与离岸做市商分开展示，点击模块进入对应面板。</p>
+      </div>
+      <div class="guide-grid">
+        <button class="guide-card investor-guide" data-view="investors">
+          <span class="guide-number" id="guideInvestorCount">34</span>
+          <span class="guide-label">南向通入市机构</span>
+          <strong>南向通投资人</strong>
+          <small>银行、基金公司、券商、保险及理财机构</small>
+          <b>进入投资人面板 →</b>
+        </button>
+        <button class="guide-card maker-guide" data-view="makers">
+          <span class="guide-number" id="guideMakerCount">12</span>
+          <span class="guide-label">离岸报价机构</span>
+          <strong>南向通做市商</strong>
+          <small>离岸银行及国际银行做市商观察池</small>
+          <b>进入做市商面板 →</b>
+        </button>
       </div>
     </section>
 
-    <section class="dashboard-layout">
+    <section class="view hidden" id="investorView">
+      <div class="view-title">
+        <div><button class="back-button" data-view="guide">← 返回开始指引</button><h2>南向通投资人</h2><p>银行 · 基金公司 · 券商 · 保险 · 理财</p></div>
+        <span>偏好、期限、币种和收益率字段可直接编辑，自动保存在当前浏览器。</span>
+      </div>
+      <section class="stats" id="stats"></section>
+      <section class="control-panel">
+        <div class="tabs" id="tabs"></div>
+        <div class="search-actions">
+          <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索投资人、偏好或券种"></label>
+          <button class="primary csv-button" id="csvBtn">导出 CSV</button>
+        </div>
+      </section>
       <section class="panel investor-panel">
         <div class="panel-head">
-          <div>
-            <h2>南向通投资人</h2>
-            <p class="panel-subtitle">投资偏好 · 期限 · 收益率要求</p>
-            <p id="investorCount">当前显示 20 家重点机构</p>
-          </div>
+          <div><h2>南向通投资人</h2><p class="panel-subtitle">投资偏好 · 关注期限 · 币种 · 研究收益率要求</p><p id="investorCount">当前显示机构</p></div>
         </div>
+        <div class="bank-note">银行模块依据南向通面向合资格境内机构投资者的制度范围建立；具体银行实际参与及活跃状态需逐家核验。</div>
         <div class="investor-list" id="institutionGrid"></div>
         <p class="empty hidden" id="emptyState">没有匹配的投资人。</p>
       </section>
-
-      <aside class="panel market-panel">
-        <div class="panel-head">
-          <div>
-            <h2>南向通做市商</h2>
-            <p>离岸做市与报价机构观察池</p>
-          </div>
-        </div>
-        <div class="market-note">公开渠道未提供持续更新的完整官方名单，以下机构用于业务研究，实际准入与活跃状态需核验。</div>
-        <div class="market-list" id="marketMakerList"></div>
-      </aside>
     </section>
 
-    <section class="source-panel panel">
+    <section class="view hidden" id="makerView">
+      <div class="view-title">
+        <div><button class="back-button" data-view="guide">← 返回开始指引</button><h2>南向通做市商</h2><p>离岸做市与报价机构观察池</p></div>
+      </div>
+      <section class="panel market-panel">
+        <div class="market-note">公开渠道未提供持续更新的完整官方名单，以下机构用于业务研究，实际准入与活跃状态需核验。</div>
+        <div class="market-list market-page-list" id="marketMakerList"></div>
+      </section>
+    </section>
+
+    <section class="source-panel panel" id="sourcePanel">
       <div class="panel-head">
         <div><h2>公开资料来源</h2><p>制度依据、市场安排及机构公开信息入口</p></div>
       </div>
@@ -83,7 +102,9 @@
         <li><b>A · 明确披露</b>：机构或监管公开材料直接披露。</li>
         <li><b>B · 较强推断</b>：由公开产品、定期报告、管理人策略形成。</li>
         <li><b>C · 行业估计</b>：按机构类型与公开市场惯例估计，需访谈确认。</li>
-        <li><b>收益率要求</b>：为美元债静态收益率研究区间，并非机构正式报价。</li>
+        <li><b>银行观察池</b>：依据南向通合资格机构制度范围建立，不等同于实际活跃银行名单。</li>
+        <li><b>收益率要求</b>：为离岸债券静态收益率研究估计，并非机构正式报价。</li>
+        <li><b>行内编辑</b>：偏好、期限、币种和收益率修改后保存在当前浏览器。</li>
         <li><b>做市商观察池</b>：用于业务研究，不等同于官方指定或当前活跃名单。</li>
       </ul>
     </div>
