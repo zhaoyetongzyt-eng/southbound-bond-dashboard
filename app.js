@@ -74,25 +74,16 @@ function renderCards() {
     <article class="institution">
       <div class="institution-name"><h3>${x.name}</h3><p>${x.legalName}</p></div>
       <span class="badge category">${categoryLabels[x.category]}</span>
-      <label class="editable-field preference-field"><span>投资偏好</span><textarea data-id="${x.id}" data-field="preference">${escapeAttribute(x.preference)}</textarea></label>
-      <label class="editable-field"><span>关注期限</span><input data-id="${x.id}" data-field="tenor" value="${escapeAttribute(x.tenor)}"></label>
-      <label class="editable-field"><span>币种</span><input data-id="${x.id}" data-field="currency" value="${escapeAttribute(x.currency)}"></label>
-      <label class="editable-field"><span>研究收益率</span><input data-id="${x.id}" data-field="yield" value="${escapeAttribute(x.yield)}"></label>
+      <div class="display-field preference-display"><span>投资偏好</span><p>${x.preference}</p></div>
+      <div class="display-field"><span>关注期限</span><strong>${x.tenor}</strong></div>
+      <div class="display-field"><span>币种</span><strong>${x.currency}</strong></div>
+      <div class="display-field"><span>研究收益率</span><strong>${x.yield}</strong></div>
       <button class="card-action" data-detail-id="${x.id}">详情</button>
     </article>`).join("");
 }
 
 function escapeAttribute(value) {
   return String(value ?? "").replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-}
-
-function saveInlineEdit(target) {
-  const row = data.institutions.find(x => x.id === target.dataset.id);
-  if (!row || !target.dataset.field) return;
-  row[target.dataset.field] = target.value.trim();
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  target.classList.add("saved");
-  setTimeout(() => target.classList.remove("saved"), 700);
 }
 
 function csvCell(value) {
@@ -126,13 +117,34 @@ function showDetail(id) {
   $("#detailContent").innerHTML = `
     <div class="detail-head"><span class="badge category">${categoryLabels[x.category]} · ${x.evidence}级证据</span><h2>${x.name}</h2><p>${x.legalName}</p></div>
     <div class="detail-grid">
-      <div class="detail-section"><h4>投资偏好</h4><p>${x.preference}</p></div>
-      <div class="detail-section"><h4>期限、币种与收益率</h4><p>${x.tenor}；${x.currency}；研究收益率 ${x.yield}。</p></div>
+      <div class="detail-edit full">
+        <h4>编辑研究字段</h4>
+        <label><span>投资偏好</span><textarea id="detailPreference">${escapeAttribute(x.preference)}</textarea></label>
+        <div class="detail-edit-row">
+          <label><span>关注期限</span><input id="detailTenor" value="${escapeAttribute(x.tenor)}"></label>
+          <label><span>币种</span><input id="detailCurrency" value="${escapeAttribute(x.currency)}"></label>
+          <label><span>研究收益率</span><input id="detailYield" value="${escapeAttribute(x.yield)}"></label>
+        </div>
+        <button class="primary detail-save" data-save-id="${x.id}">保存并更新展示</button>
+        <span class="detail-save-status" id="detailSaveStatus"></span>
+      </div>
       <div class="detail-section full"><h4>研究判断</h4><p>${x.rationale}</p></div>
       <div class="detail-section full"><h4>信息边界</h4><p>${x.disclaimer}</p></div>
       <div class="detail-section full"><h4>公开来源</h4><a class="detail-link" href="${x.source}" target="_blank" rel="noreferrer">打开来源或机构官网 ↗</a></div>
     </div>`;
   $("#detailDialog").showModal();
+}
+
+function saveDetail(id) {
+  const row = data.institutions.find(x => x.id === id);
+  if (!row) return;
+  row.preference = $("#detailPreference").value.trim();
+  row.tenor = $("#detailTenor").value.trim();
+  row.currency = $("#detailCurrency").value.trim();
+  row.yield = $("#detailYield").value.trim();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  renderCards();
+  $("#detailSaveStatus").textContent = "已保存并更新列表";
 }
 
 function bind() {
@@ -144,8 +156,8 @@ function bind() {
   });
   $("#searchInput").addEventListener("input", renderCards);
   $("#csvBtn").addEventListener("click", exportCsv);
-  $("#institutionGrid").addEventListener("input", e => saveInlineEdit(e.target));
   $("#institutionGrid").addEventListener("click", e => e.target.dataset.detailId && showDetail(e.target.dataset.detailId));
+  $("#detailContent").addEventListener("click", e => e.target.dataset.saveId && saveDetail(e.target.dataset.saveId));
   $("#methodBtn").addEventListener("click", () => $("#methodDialog").showModal());
   $("#editBtn").addEventListener("click", () => { $("#jsonEditor").value = JSON.stringify(data, null, 2); $("#editDialog").showModal(); });
   document.querySelectorAll("[data-close]").forEach(x => x.addEventListener("click", () => x.closest("dialog").close()));
