@@ -77,10 +77,10 @@ function renderCards() {
     <article class="institution">
       <div class="institution-name"><h3>${x.name}</h3><p>${x.legalName}</p></div>
       <span class="badge category">${categoryLabels[x.category]}</span>
-      <div class="display-field preference-display"><span>投资偏好</span><p>${x.preference}</p></div>
-      <div class="display-field"><span>关注期限</span><strong>${x.tenor}</strong></div>
-      <div class="display-field"><span>币种</span><strong>${x.currency}</strong></div>
-      <div class="display-field"><span>研究收益率</span><strong>${x.yield}</strong></div>
+      <div class="display-field preference-display"><p>${x.preference}</p></div>
+      <div class="display-field"><strong>${x.tenor}</strong></div>
+      <div class="display-field"><strong>${x.currency}</strong></div>
+      <div class="display-field"><strong>${x.yield}</strong></div>
       <button class="card-action" data-detail-id="${x.id}">详情</button>
     </article>`).join("");
 }

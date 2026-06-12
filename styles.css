@@ -55,10 +55,11 @@ main { width: min(1480px, 94vw); margin: 22px auto 50px; }
 .investor-list { width: 100%; }
 .bank-note { margin: 12px 16px 0; padding: 10px 12px; color: #36547d; background: #f0f5ff; border: 1px solid #dbe7ff; border-radius: 8px; font-size: 9px; line-height: 1.5; }
 .institution { display: grid; grid-template-columns: minmax(165px, .9fr) 76px minmax(230px, 1.25fr) 145px 180px 180px 72px; column-gap: 14px; align-items: center; min-height: 116px; padding: 16px 30px; border-bottom: 1px solid var(--line); }
+.table-header { min-height: 45px; margin-top: 12px; padding-top: 10px; padding-bottom: 10px; color: #526078; background: #f7f9fc; border-top: 1px solid var(--line); font-size: 11px; font-weight: 700; }.table-header:hover { background: #f7f9fc; }
 .institution:last-child { border-bottom: 0; }.institution:hover { background: #f8faff; }
 .institution-name h3 { margin: 0 0 5px; font-size: 15px; }.institution-name p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
 .category { color: var(--blue-dark); background: var(--blue-light); padding: 5px 8px; }
-.display-field span { display: inline-flex; margin-bottom: 8px; padding: 3px 7px; color: #2458cf; background: #edf3ff; border-radius: 5px; font-size: 11px; font-weight: 700; letter-spacing: .02em; }.display-field p, .display-field strong { margin: 0; color: #344054; font-size: 12px; font-weight: 500; line-height: 1.55; }.preference-display p { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }.institution .display-field:nth-of-type(4) { margin-left: 8px; }
+.display-field p, .display-field strong { margin: 0; color: #344054; font-size: 12px; font-weight: 500; line-height: 1.55; }.preference-display p { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }.institution .display-field:nth-of-type(4) { margin-left: 8px; }
 .evidence { color: var(--green); background: #e7f7f1; padding: 5px 7px; }
 .card-action { padding: 8px 11px; color: var(--blue); background: #edf3ff; font-size: 11px; }
 .market-note { margin: 14px; padding: 12px; color: #6d522d; background: #fff8e8; border: 1px solid #f4e2b9; border-radius: 10px; font-size: 10px; line-height: 1.55; }
@@ -94,7 +95,7 @@ dialog::backdrop { background: rgba(17,24,39,.62); backdrop-filter: blur(4px); }
 }
 @media (max-width: 780px) {
   .hero-inner { align-items: flex-start; flex-direction: column; }.guide-grid { grid-template-columns: 1fr; }.stats { grid-template-columns: repeat(2, 1fr); }.control-panel { grid-template-columns: 1fr; }
-  .search { min-height: 42px; }.institution { grid-template-columns: 1fr 72px 55px; }.display-field { grid-column: 1 / -1; }.source-list { grid-template-columns: 1fr 1fr; }.view-title { align-items: flex-start; flex-direction: column; }.detail-edit-row { grid-template-columns: 1fr; }
+  .search { min-height: 42px; }.institution { grid-template-columns: 1fr 72px 55px; }.table-header { display: none; }.display-field { grid-column: 1 / -1; }.display-field::before { display: block; margin-bottom: 4px; color: var(--muted); font-size: 9px; font-weight: 700; }.preference-display::before { content: "投资偏好"; }.institution .display-field:nth-of-type(3)::before { content: "关注期限"; }.institution .display-field:nth-of-type(4)::before { content: "币种"; }.institution .display-field:nth-of-type(5)::before { content: "研究收益率"; }.source-list { grid-template-columns: 1fr 1fr; }.view-title { align-items: flex-start; flex-direction: column; }.detail-edit-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
   .search-actions { grid-template-columns: 1fr; }
