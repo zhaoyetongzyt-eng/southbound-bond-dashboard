@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="南向通机构与投资偏好研究面板">
+  <title>南向通机构研究面板</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">SC</span>
+      <span>Southbound Connect <b>机构雷达</b></span>
+    </a>
+    <div class="top-actions">
+      <button class="ghost" id="methodBtn">研究口径</button>
+      <button class="primary" id="editBtn">编辑数据</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SOUTHBOUND BOND CONNECT · PUBLIC RESEARCH</p>
+        <h1>南向通机构<br><em>投资偏好研究面板</em></h1>
+        <p class="hero-copy">以公开信息建立机构观察池，区分明确披露与研究推断。用于市场研究，不代表机构正式投资授权或报价。</p>
+      </div>
+      <div class="hero-card">
+        <span>研究更新</span>
+        <strong id="asOf">2026.06</strong>
+        <p>覆盖五类机构，重点跟踪 20 家资管、券商、保险及理财机构。</p>
+      </div>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="toolbar">
+      <div class="tabs" id="tabs"></div>
+      <label class="search">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="搜索机构、偏好或券种">
+      </label>
+    </section>
+
+    <section class="context-card">
+      <div>
+        <span class="context-kicker">市场口径</span>
+        <h2>名单是研究观察池，不是官方参与者白名单</h2>
+      </div>
+      <p>公开规则主要披露合资格境内机构类型，单家机构是否实际交易、内部收益率门槛通常不公开。面板用证据等级与“研究估值”标签标明不确定性。</p>
+    </section>
+
+    <section class="grid" id="institutionGrid"></section>
+    <p class="empty hidden" id="emptyState">没有匹配的机构。</p>
+
+    <section class="sources">
+      <div>
+        <p class="eyebrow">SOURCE DESK</p>
+        <h2>核心公开来源</h2>
+      </div>
+      <div class="source-list" id="sourceList"></div>
+    </section>
+  </main>
+
+  <dialog id="detailDialog">
+    <button class="dialog-close" data-close aria-label="关闭">×</button>
+    <div id="detailContent"></div>
+  </dialog>
+
+  <dialog id="methodDialog">
+    <button class="dialog-close" data-close aria-label="关闭">×</button>
+    <div class="dialog-body">
+      <p class="eyebrow">METHODOLOGY</p>
+      <h2>研究口径与限制</h2>
+      <ul class="method-list">
+        <li><b>A · 明确披露</b>：机构或监管公开材料直接披露。</li>
+        <li><b>B · 较强推断</b>：由公开产品、定期报告、管理人策略形成。</li>
+        <li><b>C · 行业估计</b>：按机构类型与公开市场惯例估计，需访谈确认。</li>
+        <li><b>收益率要求</b>：为美元债静态收益率研究区间，随利率、信用与汇率显著变化，并非机构报价。</li>
+        <li><b>期限</b>：表示主要关注的剩余期限，不等于组合久期。</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <dialog id="editDialog">
+    <button class="dialog-close" data-close aria-label="关闭">×</button>
+    <div class="dialog-body edit-body">
+      <p class="eyebrow">EDITOR</p>
+      <h2>编辑面板数据</h2>
+      <p>编辑 JSON 后保存到当前浏览器，或导出后提交到 GitHub 的 <code>data/institutions.json</code>。</p>
+      <textarea id="jsonEditor" spellcheck="false"></textarea>
+      <p class="editor-error" id="editorError"></p>
+      <div class="editor-actions">
+        <button class="ghost" id="resetBtn">恢复仓库版本</button>
+        <button class="ghost" id="exportBtn">导出 JSON</button>
+        <button class="primary" id="saveBtn">保存到浏览器</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer>
+    <span>南向通机构雷达</span>
+    <span>公开信息研究 · 非投资建议</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

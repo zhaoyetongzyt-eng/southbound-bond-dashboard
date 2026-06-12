@@ -1,0 +1,85 @@
+:root {
+  --ink: #15231f;
+  --muted: #697772;
+  --paper: #f3f2ec;
+  --card: #fbfaf6;
+  --line: #d9ddd7;
+  --green: #164b3b;
+  --mint: #cfe6d9;
+  --orange: #e66f38;
+  --blue: #315a82;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+.topbar { height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; border-bottom: 1px solid var(--line); background: rgba(243,242,236,.92); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(12px); }
+.brand { color: var(--ink); text-decoration: none; display: flex; gap: 12px; align-items: center; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+.brand b { color: var(--orange); font-weight: 700; }
+.brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--green); font-weight: 700; letter-spacing: 0; }
+.top-actions, .editor-actions { display: flex; gap: 10px; }
+button { border: 0; border-radius: 999px; padding: 10px 17px; }
+.ghost { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+.primary { background: var(--green); color: white; }
+main { width: min(1440px, 90vw); margin: auto; }
+.hero { min-height: 420px; padding: 80px 0 60px; display: grid; grid-template-columns: 1.6fr .6fr; gap: 8vw; align-items: end; border-bottom: 1px solid var(--line); }
+.eyebrow, .context-kicker { color: var(--orange); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+h1 { margin: 16px 0 20px; max-width: 800px; font-family: Georgia, "Songti SC", serif; font-weight: 500; font-size: clamp(46px, 7vw, 94px); line-height: .98; letter-spacing: -.045em; }
+h1 em { color: var(--green); font-style: normal; }
+.hero-copy { max-width: 670px; color: var(--muted); line-height: 1.8; }
+.hero-card { padding: 25px; background: var(--green); color: white; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 4px 46px 4px 4px; }
+.hero-card span { color: var(--mint); font-size: 12px; letter-spacing: .12em; }
+.hero-card strong { font-family: Georgia, serif; font-size: 58px; font-weight: 400; }
+.hero-card p { color: #c8d6d1; margin: 0; font-size: 13px; line-height: 1.6; }
+.stats { padding: 28px 0; display: grid; grid-template-columns: repeat(5, 1fr); border-bottom: 1px solid var(--line); }
+.stat { padding: 0 20px; border-right: 1px solid var(--line); }
+.stat:first-child { padding-left: 0; }.stat:last-child { border: 0; }
+.stat strong { display: block; font-family: Georgia, serif; font-size: 38px; font-weight: 400; color: var(--green); }
+.stat span { color: var(--muted); font-size: 12px; }
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 42px 0 22px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tab { color: var(--muted); background: transparent; border: 1px solid var(--line); }
+.tab.active { color: white; border-color: var(--green); background: var(--green); }
+.search { width: min(320px, 100%); display: flex; gap: 10px; align-items: center; padding: 10px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; }
+.search input { border: 0; outline: 0; background: transparent; width: 100%; }
+.context-card { margin: 8px 0 24px; padding: 25px 30px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px; color: white; background: var(--blue); border-radius: 4px; }
+.context-card h2 { margin: 8px 0 0; font-family: Georgia, "Songti SC", serif; font-weight: 400; }
+.context-card p { margin: 0; color: #d7e2ea; font-size: 13px; line-height: 1.8; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding-bottom: 60px; }
+.institution { min-height: 310px; display: flex; flex-direction: column; padding: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 4px; transition: transform .2s, box-shadow .2s; }
+.institution:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(32,48,42,.08); }
+.card-top { display: flex; justify-content: space-between; gap: 15px; }
+.category { color: var(--orange); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.evidence { color: var(--muted); font-size: 11px; padding: 4px 7px; background: var(--paper); border-radius: 3px; }
+.institution h3 { margin: 25px 0 8px; font-family: Georgia, "Songti SC", serif; font-size: 26px; font-weight: 500; }
+.legal-name { margin: 0; color: var(--muted); font-size: 12px; min-height: 35px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0; }
+.tag { color: var(--green); background: #e3eee8; padding: 5px 8px; border-radius: 3px; font-size: 11px; }
+.metrics { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.metric { padding-top: 12px; border-top: 1px solid var(--line); }
+.metric span { display: block; color: var(--muted); font-size: 10px; }
+.metric strong { display: block; margin-top: 5px; font-size: 13px; }
+.card-action { margin-top: 18px; padding: 0; text-align: left; color: var(--orange); background: transparent; font-size: 12px; }
+.sources { display: grid; grid-template-columns: .8fr 1.5fr; gap: 8vw; padding: 65px 0; border-top: 1px solid var(--line); }
+.sources h2 { margin-top: 10px; font-family: Georgia, serif; font-size: 36px; font-weight: 400; }
+.source-link { display: grid; grid-template-columns: 34px 1fr auto; gap: 16px; align-items: center; padding: 16px 0; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.source-link span { color: var(--orange); font-size: 11px; }.source-link small { color: var(--muted); }
+footer { padding: 25px 5vw; display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; background: var(--ink); }
+dialog { width: min(760px, 92vw); max-height: 88vh; padding: 0; border: 0; border-radius: 8px; color: var(--ink); background: var(--card); box-shadow: 0 30px 80px rgba(0,0,0,.25); }
+dialog::backdrop { background: rgba(17,30,26,.62); backdrop-filter: blur(4px); }
+.dialog-close { position: absolute; top: 15px; right: 15px; z-index: 2; background: var(--paper); font-size: 20px; }
+.dialog-body { padding: 45px; }.dialog-body h2 { font-family: Georgia, "Songti SC", serif; font-size: 36px; font-weight: 400; }
+.detail-head { padding: 45px; color: white; background: var(--green); }.detail-head h2 { margin: 18px 0 5px; font-family: Georgia, "Songti SC", serif; font-size: 42px; font-weight: 400; }.detail-head p { color: #c9d9d3; }
+.detail-grid { padding: 35px 45px 45px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.detail-section.full { grid-column: 1 / -1; }.detail-section h4 { margin: 0 0 10px; color: var(--orange); font-size: 11px; letter-spacing: .12em; }.detail-section p { margin: 0; line-height: 1.7; font-size: 14px; }
+.detail-link { color: var(--green); font-size: 12px; }
+.method-list { padding-left: 20px; line-height: 1.8; color: var(--muted); }.method-list b { color: var(--ink); }
+.edit-body textarea { width: 100%; height: 430px; padding: 15px; resize: vertical; border: 1px solid var(--line); background: #202b27; color: #d6e6df; font: 12px/1.6 ui-monospace, monospace; }
+.editor-actions { justify-content: flex-end; margin-top: 14px; }.editor-error { color: #b74227; font-size: 12px; min-height: 16px; }
+.empty { padding: 60px; text-align: center; color: var(--muted); }.hidden { display: none; }
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 55px; }.hero-card { min-height: 180px; }.stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }.stat { border: 0; padding: 0; }.grid { grid-template-columns: 1fr 1fr; }.context-card, .sources { grid-template-columns: 1fr; }.toolbar { align-items: stretch; flex-direction: column; }.search { width: 100%; }
+}
+@media (max-width: 580px) {
+  .topbar { padding: 0 4vw; }.brand span:last-child { display: none; }.grid { grid-template-columns: 1fr; }.hero { min-height: auto; }.hero-card strong { font-size: 45px; }.detail-grid { grid-template-columns: 1fr; padding: 30px; }.detail-section.full { grid-column: auto; }.dialog-body, .detail-head { padding: 35px 25px; }.editor-actions { flex-wrap: wrap; }.editor-actions button { flex: 1; }
+}
