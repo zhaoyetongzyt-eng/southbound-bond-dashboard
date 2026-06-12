@@ -44,6 +44,7 @@ main { width: min(1480px, 94vw); margin: 22px auto 50px; }
 .panel { overflow: hidden; }
 .panel-head { min-height: 70px; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); }
 .panel-head h2 { margin: 0 0 5px; font-size: 17px; }.panel-head p { margin: 0; color: var(--muted); font-size: 11px; }
+.panel-head .panel-subtitle { margin-bottom: 4px; color: var(--blue); font-size: 10px; font-weight: 600; letter-spacing: .03em; }
 .status-chip, .badge { display: inline-flex; align-items: center; width: fit-content; border-radius: 999px; font-size: 10px; font-weight: 700; white-space: nowrap; }
 .status-chip { padding: 6px 9px; }.status-chip.blue { color: #2559cf; background: #e7efff; }.status-chip.dark { color: white; background: var(--navy); }
 .investor-list { width: 100%; }
