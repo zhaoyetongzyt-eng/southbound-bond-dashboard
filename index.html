@@ -27,10 +27,13 @@
 
     <section class="control-panel">
       <div class="tabs" id="tabs"></div>
-      <label class="search">
-        <span>⌕</span>
-        <input id="searchInput" type="search" placeholder="搜索投资人、偏好或券种">
-      </label>
+      <div class="search-actions">
+        <label class="search">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="搜索投资人、偏好或券种">
+        </label>
+        <button class="primary csv-button" id="csvBtn">导出 CSV</button>
+      </div>
     </section>
 
     <section class="dashboard-layout">
@@ -40,7 +43,6 @@
             <h2>南向通投资人</h2>
             <p id="investorCount">当前显示 20 家重点机构</p>
           </div>
-          <span class="status-chip blue">70% 主面板</span>
         </div>
         <div class="investor-list" id="institutionGrid"></div>
         <p class="empty hidden" id="emptyState">没有匹配的投资人。</p>
@@ -52,7 +54,6 @@
             <h2>南向通做市商</h2>
             <p>离岸做市与报价机构观察池</p>
           </div>
-          <span class="status-chip dark">30%</span>
         </div>
         <div class="market-note">公开渠道未提供持续更新的完整官方名单，以下机构用于业务研究，实际准入与活跃状态需核验。</div>
         <div class="market-list" id="marketMakerList"></div>

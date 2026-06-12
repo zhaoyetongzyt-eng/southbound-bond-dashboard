@@ -20,6 +20,15 @@ function investors() {
   return data.institutions.filter(x => investorCategories.includes(x.category));
 }
 
+function filteredInvestors() {
+  const q = $("#searchInput").value.trim().toLowerCase();
+  return investors().filter(x => {
+    const categoryMatch = activeCategory === "全部" || x.category === activeCategory;
+    const text = [x.name, x.legalName, x.preference, ...(x.tags || [])].join(" ").toLowerCase();
+    return categoryMatch && (!q || text.includes(q));
+  });
+}
+
 function render() {
   $("#asOf").textContent = data.meta.updated;
   renderStats();
@@ -47,12 +56,7 @@ function renderTabs() {
 }
 
 function renderCards() {
-  const q = $("#searchInput").value.trim().toLowerCase();
-  const rows = investors().filter(x => {
-    const categoryMatch = activeCategory === "全部" || x.category === activeCategory;
-    const text = [x.name, x.legalName, x.preference, ...(x.tags || [])].join(" ").toLowerCase();
-    return categoryMatch && (!q || text.includes(q));
-  });
+  const rows = filteredInvestors();
   $("#investorCount").textContent = `当前显示 ${rows.length} / ${investors().length} 家重点机构`;
   $("#emptyState").classList.toggle("hidden", rows.length > 0);
   $("#institutionGrid").innerHTML = rows.map(x => `
@@ -64,6 +68,28 @@ function renderCards() {
       <div class="mini-metric"><span>研究收益率</span><strong>${x.yield}</strong></div>
       <button class="card-action" data-id="${x.id}">详情</button>
     </article>`).join("");
+}
+
+function csvCell(value) {
+  return `"${String(value ?? "").replaceAll('"', '""')}"`;
+}
+
+function exportCsv() {
+  const investorHeader = ["数据类型", "机构名称", "机构全称/英文名", "机构类别", "投资偏好/机构类型", "关注期限", "研究收益率区间", "证据等级", "公开来源"];
+  const investorRows = filteredInvestors().map(x => [
+    "投资人", x.name, x.legalName, categoryLabels[x.category], x.preference, x.tenor, x.yield, x.evidence, x.source
+  ]);
+  const makerRows = (data.marketMakers || []).map(x => [
+    "做市商观察池", x.name, x.english, "做市商", x.type, "", "", "待核验", ""
+  ]);
+  const csv = [investorHeader, ...investorRows, ...makerRows].map(row => row.map(csvCell).join(",")).join("\r\n");
+  const blob = new Blob(["\ufeff", csv], { type: "text/csv;charset=utf-8" });
+  const a = Object.assign(document.createElement("a"), {
+    href: URL.createObjectURL(blob),
+    download: `南向通机构研究_${new Date().toISOString().slice(0, 10)}.csv`
+  });
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 
 function renderMarketMakers() {
@@ -100,6 +126,7 @@ function bind() {
     renderTabs(); renderCards();
   });
   $("#searchInput").addEventListener("input", renderCards);
+  $("#csvBtn").addEventListener("click", exportCsv);
   $("#institutionGrid").addEventListener("click", e => e.target.dataset.id && showDetail(e.target.dataset.id));
   $("#methodBtn").addEventListener("click", () => $("#methodDialog").showModal());
   $("#editBtn").addEventListener("click", () => { $("#jsonEditor").value = JSON.stringify(data, null, 2); $("#editDialog").showModal(); });

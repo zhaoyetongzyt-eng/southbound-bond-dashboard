@@ -32,12 +32,14 @@ main { width: min(1480px, 94vw); margin: 22px auto 50px; }
 .stat strong { display: block; margin: 6px 0 3px; font-size: 30px; line-height: 1; }
 .stat small { color: var(--muted); font-size: 10px; }
 .control-panel, .panel { background: white; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 8px 24px rgba(34,54,91,.07); }
-.control-panel { margin-bottom: 16px; padding: 13px; display: grid; grid-template-columns: 1fr minmax(260px, 390px); gap: 12px; }
+.control-panel { margin-bottom: 16px; padding: 13px; display: grid; grid-template-columns: 1fr minmax(350px, 500px); gap: 12px; }
 .tabs { display: flex; flex-wrap: wrap; gap: 7px; }
 .tab { color: #43516b; background: #f5f7fb; border: 1px solid var(--line); }
 .tab.active { color: white; border-color: var(--blue); background: var(--blue); }
 .search { display: flex; gap: 9px; align-items: center; padding: 0 13px; border: 1px solid var(--line); border-radius: 8px; background: white; }
 .search input { width: 100%; border: 0; outline: 0; background: transparent; }
+.search-actions { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.csv-button { white-space: nowrap; }
 .dashboard-layout { display: grid; grid-template-columns: minmax(0, 7fr) minmax(300px, 3fr); gap: 16px; align-items: start; }
 .panel { overflow: hidden; }
 .panel-head { min-height: 70px; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); }
@@ -86,6 +88,7 @@ dialog::backdrop { background: rgba(17,24,39,.62); backdrop-filter: blur(4px); }
   .search { min-height: 42px; }.institution { grid-template-columns: 1fr 90px 60px; }.preference, .mini-metric { display: none; }.source-list { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 520px) {
+  .search-actions { grid-template-columns: 1fr; }
   .market-list, .source-list { grid-template-columns: 1fr; }.source-link { border-right: 0; border-bottom: 1px solid var(--line); }.hero-actions { width: 100%; }.hero-actions button { flex: 1; }
   footer { gap: 12px; flex-direction: column; }.detail-grid { grid-template-columns: 1fr; padding: 28px; }.detail-section.full { grid-column: auto; }.dialog-body, .detail-head { padding: 32px 24px; }
 }
