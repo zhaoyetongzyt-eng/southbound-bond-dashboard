@@ -10,6 +10,11 @@
 - 浏览器内 JSON 编辑、保存、恢复与导出
 - 明确区分公开披露、研究推断和行业估计
 
+## 公开网站
+
+- Vercel：<https://southbound-bond-dashboard.vercel.app/>
+- GitHub Pages：<https://zhaoyetongzyt-eng.github.io/southbound-bond-dashboard/>
+
 ## 本地运行
 
 ```bash
