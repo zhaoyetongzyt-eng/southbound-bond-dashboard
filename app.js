@@ -1,5 +1,5 @@
 const DATA_URL = "data/institutions.json";
-const STORAGE_KEY = "southbound-institution-research-v3";
+const STORAGE_KEY = "southbound-institution-research-v4";
 let repoData;
 let data;
 let activeCategory = "全部";
@@ -10,26 +10,14 @@ const categoryLabels = { 银行: "银行", 资管机构: "基金公司", 保险:
 
 async function init() {
   repoData = await fetch(DATA_URL).then(r => r.json());
-  const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem("southbound-institution-research-v2");
+  const saved = localStorage.getItem(STORAGE_KEY);
   data = saved ? JSON.parse(saved) : structuredClone(repoData);
   data.marketMakers = structuredClone(repoData.marketMakers);
   data.sources = structuredClone(repoData.sources);
   data.meta = structuredClone(repoData.meta);
-  syncBankInvestors();
   normalizeData(data);
   render();
   bind();
-}
-
-function syncBankInvestors() {
-  const savedBanks = new Map(data.institutions.filter(x => x.category === "银行").map(x => [x.legalName, x]));
-  const repoBanks = repoData.institutions.filter(x => x.category === "银行").map(bank => {
-    const saved = savedBanks.get(bank.legalName);
-    if (!saved) return structuredClone(bank);
-    return { ...structuredClone(bank), preference: saved.preference, tenor: saved.tenor, currency: saved.currency, yield: saved.yield };
-  });
-  const nonBanks = data.institutions.filter(x => x.category !== "银行");
-  data.institutions = [...repoBanks, ...nonBanks];
 }
 
 function normalizeData(value) {
@@ -142,8 +130,8 @@ function showDetail(id) {
         <button class="primary detail-save" data-save-id="${x.id}">保存并更新展示</button>
         <span class="detail-save-status" id="detailSaveStatus"></span>
       </div>
-      <div class="detail-section full"><h4>研究判断</h4><p>${x.rationale}</p></div>
-      <div class="detail-section full"><h4>信息边界</h4><p>${x.disclaimer}</p></div>
+      ${x.rationale ? `<div class="detail-section full"><h4>研究判断</h4><p>${x.rationale}</p></div>` : ""}
+      ${x.disclaimer ? `<div class="detail-section full"><h4>信息边界</h4><p>${x.disclaimer}</p></div>` : ""}
       <div class="detail-section full"><h4>公开来源</h4><a class="detail-link" href="${x.source}" target="_blank" rel="noreferrer">打开来源或机构官网 ↗</a></div>
     </div>`;
   $("#detailDialog").showModal();
